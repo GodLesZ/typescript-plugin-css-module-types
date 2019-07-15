@@ -11,10 +11,10 @@ before_script:
 
 script:
     - yarn run test
+    - npx codecov
 
 after_success:
     - yarn pack
-    - npx codecov
 
 deploy:
     - provider: releases
