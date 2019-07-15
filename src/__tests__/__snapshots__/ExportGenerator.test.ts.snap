@@ -1,18 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ExportGenerator creates exports correctly 1`] = `
-"declare const styles: {
-    \\"camelCase\\": string;
-  \\"camelCase2\\": string;
-  \\"some-class\\": string;
-  \\"const\\": string;
-};
-export default styles;
-export const camelCase: string;
-export const camelCase2: string;
-"
-`;
-
 exports[`ExportGenerator creates exports with constants for every camel-case class 1`] = `
 "declare const styles: {
     \\"camelCase\\": string;
