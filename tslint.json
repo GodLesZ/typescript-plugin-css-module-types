@@ -1,0 +1,80 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-eslint-rules"
+  ],
+  "rulesDirectory": [
+    "node_modules/tslint-microsoft-contrib"
+  ],
+  "linterOptions": {
+    "format": "stylish",
+    "exclude": [
+      "**/*.json",
+      "**/*.js",
+      "**/*.d.ts",
+      "./build"
+    ]
+  },
+  "rules": {
+    /* tslint https://palantir.github.io/tslint/rules/ */
+    "array-type": {
+        "options": ["generic"]
+    },
+    "arrow-parens": false,
+    "await-promise": true,
+    "cyclomatic-complexity": {
+        "options": [15]
+    },
+    "deprecation": true,
+    "max-classes-per-file": {
+        "options": [10]
+    },
+    "max-file-line-count": {
+        "options": [666]
+    },
+    "max-line-length": false,
+    "member-access": {
+        "options": ["check-accessor", "check-constructor"]
+    },
+    "member-ordering": {
+        "options": {
+            "order": "fields-first"
+        }
+    },
+    "no-any": true,
+    "no-consecutive-blank-lines": {
+        "options": [1]
+    },
+    "no-debugger": true,
+    "no-implicit-dependencies": false,
+    "no-invalid-this": true,
+    "no-parameter-properties": true,
+    "no-submodule-imports": false,
+    "no-trailing-whitespace": true,
+    "no-var-requires": false,
+    "prefer-readonly": true,
+    "prefer-template":  {
+        "options": ["allow-single-concat"]
+    },
+    "object-literal-sort-keys": false,
+    "only-arrow-functions": true,
+    "ordered-imports": false,
+    "trailing-comma": false,
+    "triple-equals": true,
+    "variable-name": {
+        "options": ["ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"]
+    },
+
+    /* tslint-eslint-rules https://github.com/buzinas/tslint-eslint-rules */
+    "no-multi-spaces": true,
+    "object-curly-spacing": {
+        "options": ["always"]
+    },
+    "ter-arrow-parens": {
+        "options": ["as-needed"]
+    },
+    "ter-max-len": {
+        "options": [160]
+    }
+  }
+}

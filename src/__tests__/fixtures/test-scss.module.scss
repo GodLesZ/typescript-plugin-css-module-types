@@ -1,0 +1,57 @@
+:global .global-class {
+    color: red;
+}
+
+:global(.global-class-2) {
+    .local-class-inside-global {
+        color: red;
+    }
+}
+
+:local .local-class {
+    color: red;
+}
+
+:local(.local-class-2) {
+    .local-class-inside-local {
+        color: red;
+    }
+}
+
+.reserved-words {
+    .default {
+        color: red;
+    }
+
+    .const {
+        color: red;
+    }
+}
+
+.nested-class-parent {
+    .child-class {
+        color: red;
+    }
+
+    &--extended {
+        color: red;
+    }
+}
+
+$color: red !default;
+
+@for $section from 1 to 10 {
+    .section-#{$section} {
+        color: $color;
+    }
+}
+
+// .commented-parent-class {
+//   .commented-child-class
+// }
+
+/*
+.commented-parent-class {
+  .commented-child-class
+}
+*/

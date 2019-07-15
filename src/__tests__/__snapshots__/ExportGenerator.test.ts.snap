@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExportGenerator creates exports correctly 1`] = `
+"declare const styles: {
+    \\"camelCase\\": string;
+  \\"camelCase2\\": string;
+  \\"some-class\\": string;
+  \\"const\\": string;
+};
+export default styles;
+export const camelCase: string;
+export const camelCase2: string;
+"
+`;
+
+exports[`ExportGenerator creates exports with constants for every camel-case class 1`] = `
+"declare const styles: {
+    \\"camelCase\\": string;
+  \\"camelCase2\\": string;
+  \\"some-class\\": string;
+  \\"const\\": string;
+};
+export default styles;
+export const camelCase: string;
+export const camelCase2: string;
+"
+`;
+
+exports[`ExportGenerator creates exports without constants if no camel-case class was found 1`] = `
+"declare const styles: {
+    \\"some-class\\": string;
+  \\"some-class-2\\": string;
+  \\"const\\": string;
+};
+export default styles;
+"
+`;
+
+exports[`ExportGenerator should not transform classes when no option is set 1`] = `
+Array [
+  Array [
+    "class-name-a",
+  ],
+  Array [
+    "classNameB",
+  ],
+  Array [
+    "class-Name-C",
+  ],
+  Array [
+    "__class_nAmeD--",
+  ],
+]
+`;
+
+exports[`ExportGenerator should transform classes correctly when \`camelCase\` set to \`dashes\` 1`] = `
+Array [
+  Array [
+    "class-name-a",
+    "classNameA",
+  ],
+  Array [
+    "classNameB",
+  ],
+  Array [
+    "class-Name-C",
+    "classNameC",
+  ],
+  Array [
+    "__class_nAmeD--",
+  ],
+]
+`;
+
+exports[`ExportGenerator should transform classes correctly when \`camelCase\` set to \`dashesOnly\` 1`] = `
+Array [
+  Array [
+    "classNameA",
+  ],
+  Array [
+    "classNameB",
+  ],
+  Array [
+    "classNameC",
+  ],
+  Array [
+    "__class_nAmeD--",
+  ],
+]
+`;
+
+exports[`ExportGenerator should transform classes correctly when \`camelCase\` set to \`only\` 1`] = `
+Array [
+  Array [
+    "classNameA",
+  ],
+  Array [
+    "classNameB",
+  ],
+  Array [
+    "classNameC",
+  ],
+  Array [
+    "classNAmeD",
+  ],
+]
+`;
+
+exports[`ExportGenerator should transform classes correctly when \`camelCase\` set to \`true\` 1`] = `
+Array [
+  Array [
+    "class-name-a",
+    "classNameA",
+  ],
+  Array [
+    "classNameB",
+  ],
+  Array [
+    "class-Name-C",
+    "classNameC",
+  ],
+  Array [
+    "__class_nAmeD--",
+    "classNAmeD",
+  ],
+]
+`;

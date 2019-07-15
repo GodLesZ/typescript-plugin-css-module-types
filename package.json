@@ -1,0 +1,58 @@
+{
+  "name": "typescript-plugin-css-module-types",
+  "version": "0.1.0",
+  "main": "build/index.js",
+  "author": "GodLesZ <godlesz@hotmail.de>",
+  "license": "MIT",
+  "description": "CSS modules (based on scss) support for TypeScript",
+  "keywords": [
+    "css",
+    "scss",
+    "sass",
+    "modules",
+    "plugin",
+    "typescript"
+  ],
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "tslint": "tslint --config tslint.json --project tsconfig.json \"./src/**/*.ts\"",
+    "tscheck": "tsc --noEmit --project ./tsconfig.json",
+    "prebuild": "rm -rf ./build",
+    "build": "tsc --project ./tsconfig.json",
+    "prebuild:watch": "rm -rf ./build",
+    "build:watch": "tsc --watch",
+    "prepublishOnly": "yarn build",
+    "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx tslint --project . --fix",
+      "pre-push": "yarn test"
+    }
+  },
+  "dependencies": {
+    "icss-utils": "^4.1.0",
+    "lodash": "^4.17.11",
+    "node-sass": "^4.12.0",
+    "postcss": "^7.0.16",
+    "postcss-icss-selectors": "^2.0.3",
+    "reserved-words": "^0.1.2"
+  },
+  "devDependencies": {
+    "@types/icss-utils": "^4.1.0",
+    "@types/jest": "^24.0.15",
+    "@types/lodash": "^4.14.132",
+    "@types/node": "^12.6.2",
+    "@types/node-sass": "^4.11.0",
+    "husky": "^3.0.0",
+    "jest": "^24.8.0",
+    "metro-memory-fs": "^0.55.0",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.16.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-microsoft-contrib": "^6.2.0",
+    "typescript": "^3.4.5"
+  }
+}
