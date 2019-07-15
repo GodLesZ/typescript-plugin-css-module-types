@@ -1,10 +1,12 @@
 {
   "name": "typescript-plugin-css-module-types",
+  "description": "CSS modules (based on scss) support for TypeScript",
   "version": "0.1.0",
-  "main": "build/index.js",
   "author": "GodLesZ <godlesz@hotmail.de>",
   "license": "MIT",
-  "description": "CSS modules (based on scss) support for TypeScript",
+  "bugs": "https://github.com/GodLesZ/typescript-plugin-css-module-types/issues",
+  "homepage": "https://github.com/GodLesZ/typescript-plugin-css-module-types",
+  "repository": "https://github.com/GodLesZ/typescript-plugin-css-module-types",
   "keywords": [
     "css",
     "scss",
@@ -13,6 +15,8 @@
     "plugin",
     "typescript"
   ],
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "files": [
     "build"
   ],
