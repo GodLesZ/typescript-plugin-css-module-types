@@ -12,9 +12,5 @@ module.exports = {
         "!src/**/*.d.ts",
     ],
     coverageDirectory: "<rootDir>/reports/",
-    coverageReporters: [
-        "text-summary",
-        "html"
-    ],
     testEnvironment: "node",
 };
