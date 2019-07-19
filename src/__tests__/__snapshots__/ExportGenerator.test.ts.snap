@@ -2,19 +2,19 @@
 
 exports[`ExportGenerator creates exports with constants for every camel-case class 1`] = `
 "declare const styles: {
+    [index: string]: string;
     \\"camelCase\\": string;
   \\"camelCase2\\": string;
   \\"some-class\\": string;
   \\"const\\": string;
 };
 export default styles;
-export const camelCase: string;
-export const camelCase2: string;
 "
 `;
 
 exports[`ExportGenerator creates exports without constants if no camel-case class was found 1`] = `
 "declare const styles: {
+    [index: string]: string;
     \\"some-class\\": string;
   \\"some-class-2\\": string;
   \\"const\\": string;
