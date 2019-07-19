@@ -1,7 +1,7 @@
 {
   "name": "typescript-plugin-css-module-types",
   "description": "CSS modules (based on scss) support for TypeScript",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "GodLesZ <godlesz@hotmail.de>",
   "license": "MIT",
   "bugs": "https://github.com/GodLesZ/typescript-plugin-css-module-types/issues",
