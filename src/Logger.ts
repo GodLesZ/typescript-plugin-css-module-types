@@ -1,7 +1,7 @@
-import * as fs from "fs";
-import * as path from "path";
-import * as os from "os";
-import * as tss from "typescript/lib/tsserverlibrary";
+import fs from "fs";
+import path from "path";
+import os from "os";
+import tss from "typescript/lib/tsserverlibrary";
 import IOptions from "./IOptions";
 
 export interface ILoggerOptions {
@@ -16,6 +16,7 @@ export default class Logger {
 
     private get logPath() {
         const basePath = "/logs/ts-log.log";
+
         return this.options.filePath
             ? path.join(this.options.filePath, basePath)
             : path.join(os.homedir(), basePath);
