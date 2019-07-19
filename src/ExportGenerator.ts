@@ -1,6 +1,5 @@
 import { CSSExports } from "icss-utils";
 import { camelCase } from "lodash";
-import reserved from "reserved-words";
 import IOptions from "./IOptions";
 
 const dashesCamelCase = (className: string) => {
@@ -8,8 +7,6 @@ const dashesCamelCase = (className: string) => {
 };
 
 export default class ExportGenerator {
-    private static readonly NOT_CAMELCASE_REGEXP = /[\-_]/;
-
     private readonly options: IOptions;
 
     public constructor(options: IOptions) {
@@ -17,9 +14,6 @@ export default class ExportGenerator {
     }
 
     public generate(classes: CSSExports) {
-        const isCamelCase = (className: string) => !ExportGenerator.NOT_CAMELCASE_REGEXP.test(className);
-        const isReservedWord = (className: string) => !reserved.check(className);
-
         const classNames = Object.keys(classes)
             .map(className => this.transformClassName(className))
             // Flatter array because transformClassName() may return multiple classes
@@ -27,21 +21,13 @@ export default class ExportGenerator {
                 return previousValue.concat(currentValue);
             }, []);
 
-        const camelCasedKeys = classNames
-            .filter(isCamelCase)
-            .filter(isReservedWord)
-            .map(className => `export const ${className}: string;`);
-
         const defaultExport = `\
 declare const styles: {
+    [index: string]: string;
     ${classNames.map(className => `"${className}": string;`).join("\n  ")}
 };
 export default styles;
 `;
-
-        if (camelCasedKeys.length) {
-            return `${defaultExport}${camelCasedKeys.join("\n")}\n`;
-        }
 
         return defaultExport;
     }

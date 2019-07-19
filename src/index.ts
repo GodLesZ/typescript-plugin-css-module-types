@@ -34,8 +34,6 @@ const init = ({ typescript: ts }: { typescript: typeof tss }) => {
                 const classes = cssParser.getClasses(css);
                 const dts = exportGenerator.generate(classes);
 
-                // logger.log(dts);
-
                 scriptSnapshot = ts.ScriptSnapshot.fromString(dts);
             }
 
@@ -58,8 +56,6 @@ const init = ({ typescript: ts }: { typescript: typeof tss }) => {
                 const css = fileUtils.getSourceCode(scriptSnapshot);
                 const classes = cssParser.getClasses(css);
                 const dts = exportGenerator.generate(classes);
-
-                // logger.log(dts);
 
                 scriptSnapshot = ts.ScriptSnapshot.fromString(dts);
             }
